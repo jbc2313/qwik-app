@@ -8,6 +8,10 @@ interface Distro {
   cpus: string[];
 }
 
+
+export const distros: Distro[] = [];
+
+
 export default component$(()=>{
 
 
