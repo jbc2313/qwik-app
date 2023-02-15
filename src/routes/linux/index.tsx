@@ -52,7 +52,13 @@ export default component$(()=>{
                         <li>{item.base}</li>
                     </p>
                 ))}
-            </ul>
+            </ul>  
+          <Form action={action} spaReset>
+            <input type="text" name="name" placeholder='name' required />
+            <input type="text" name="release" placeholder='release' required />
+            <input type="text" name="base" placeholder='base' required />
+            <button type="submit">Add item</button>
+          </Form>
         </div>
     )
 
