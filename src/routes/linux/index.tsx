@@ -5,7 +5,7 @@ interface Distro {
   name: string;
   release: string;
   base: string;
-  cpus: string[];
+ // cpus: string[];
 }
 
 
@@ -29,7 +29,7 @@ export const useAddToDistrosAction = action$(
     name: z.string(),
     release: z.string(),
     base: z.string(),
-    cpus: z.array(z.string()),
+  //  cpus: z.string().array(),
   })
 );
 
@@ -50,7 +50,7 @@ export default component$(()=>{
                         <li>{item.name}</li>
                         <li>{item.release}</li>
                         <li>{item.base}</li>
-                        <lii>{item.cpus}</lii>
+                      {/*  <lii>{item.cpus}</lii> */}
                     </p>
                 ))}
             </ul>  
@@ -58,7 +58,7 @@ export default component$(()=>{
             <input type="text" name="name" placeholder='name' required />
             <input type="text" name="release" placeholder='release' required />
             <input type="text" name="base" placeholder='base' required />
-            <input type="text" name="cpus" placeholder='cpus' required />
+           {/* <input type="text" name="cpus" placeholder='cpus' required /> */}
             <button type="submit">Add item</button>
           </Form>
         </div>
