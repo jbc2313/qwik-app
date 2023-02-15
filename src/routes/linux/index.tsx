@@ -50,6 +50,7 @@ export default component$(()=>{
                         <li>{item.name}</li>
                         <li>{item.release}</li>
                         <li>{item.base}</li>
+                        <lii>{item.cpus}</lii>
                     </p>
                 ))}
             </ul>  
@@ -57,6 +58,7 @@ export default component$(()=>{
             <input type="text" name="name" placeholder='name' required />
             <input type="text" name="release" placeholder='release' required />
             <input type="text" name="base" placeholder='base' required />
+            <input type="text" name="cpus" placeholder='cpus' required />
             <button type="submit">Add item</button>
           </Form>
         </div>
