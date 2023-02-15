@@ -38,11 +38,21 @@ export const useAddToDistrosAction = action$(
 
 export default component$(()=>{
 
+    const distros = useDistroLoader();
+    const action = useAddToDistrosAction();
 
     return(
         <div>
             <h1>Linux Distros worth trying</h1>
-
+            <ul>
+                {distros.value.map((item)=>(
+                    <p>
+                        <li>{item.name}</li>
+                        <li>{item.release}</li>
+                        <li>{item.base}</li>
+                    </p>
+                ))}
+            </ul>
         </div>
     )
 
