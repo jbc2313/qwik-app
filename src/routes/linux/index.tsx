@@ -12,6 +12,30 @@ interface Distro {
 export const distros: Distro[] = [];
 
 
+export const useDistroLoader = loader$(() => {
+  return distros;
+});
+
+
+
+export const useAddToDistrosAction = action$(
+  (item) => {
+    distros.push(item);
+    return {
+      success: true,
+    };
+  },
+  zod$({
+    name: z.string(),
+    release: z.string(),
+    base: z.string(),
+    cpus: z.array(z.string()),
+  })
+);
+
+
+
+
 export default component$(()=>{
 
 
