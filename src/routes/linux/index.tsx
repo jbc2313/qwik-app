@@ -1,6 +1,6 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import { type DocumentHead, loader$, action$, zod$, z, Form } from '@builder.io/qwik-city';
-
+import styles from './linux.css?inline'
 interface Distro {
   name: string;
   release: string;
@@ -37,7 +37,7 @@ export const useAddToDistrosAction = action$(
 
 
 export default component$(()=>{
-
+    useStylesScoped$(styles);
     const distros = useDistroLoader();
     const action = useAddToDistrosAction();
 
@@ -46,7 +46,7 @@ export default component$(()=>{
             <h1>Linux Distros worth trying</h1>
             <ul>
                 {distros.value.map((item)=>(
-                    <p>
+                    <p class='distroP'>
                         <li>{item.name}</li>
                         <li>{item.release}</li>
                         <li>{item.base}</li>
