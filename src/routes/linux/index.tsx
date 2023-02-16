@@ -44,16 +44,18 @@ export default component$(()=>{
     return(
         <div>
             <h1>Linux Distros worth trying</h1>
-            <ul>
+            <p class='distroP'>
                 {distros.value.map((item)=>(
-                    <p class='distroP'>
-                        <li>{item.name}</li>
+                    <> 
+                    <h4>{item.name}</h4> 
+                    <ul >
                         <li>{item.release}</li>
                         <li>{item.base}</li>
                       {/*  <lii>{item.cpus}</lii> */}
-                    </p>
+                    </ul>
+                    </>
                 ))}
-            </ul>  
+            </p>  
           <Form action={action} spaReset>
             <input type="text" name="name" placeholder='name' required />
             <input type="text" name="release" placeholder='release' required />
