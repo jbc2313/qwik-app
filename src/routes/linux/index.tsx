@@ -9,7 +9,13 @@ interface Distro {
 }
 
 
-export const distros: Distro[] = [];
+export const distros: Distro[] = [
+    {
+        name: "Fedora",
+        release: "36",
+        base: "RHEL",
+    }
+];
 
 
 export const useDistroLoader = loader$(() => {
@@ -44,7 +50,7 @@ export default component$(()=>{
     return(
         <div>
             <h1>Linux Distros worth trying</h1>
-            <p class='distroP'>
+            <div class='distroP'>
                 {distros.value.map((item)=>(
                     <> 
                     <h4>{item.name}</h4> 
@@ -55,7 +61,7 @@ export default component$(()=>{
                     </ul>
                     </>
                 ))}
-            </p>  
+            </div>  
           <Form action={action} spaReset>
             <input type="text" name="name" placeholder='name' required />
             <input type="text" name="release" placeholder='release' required />
